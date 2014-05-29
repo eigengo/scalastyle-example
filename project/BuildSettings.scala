@@ -4,7 +4,7 @@ object BuildSettings {
   import org.scalastyle.sbt.ScalastylePlugin
 
   lazy val buildSettings = 
-    Defaults.defaultSettings ++ 
+    Defaults.coreDefaultSettings ++
     ScalastylePlugin.Settings ++ 
     Seq(
       org.scalastyle.sbt.PluginKeys.config := file("project/scalastyle-config.xml"),

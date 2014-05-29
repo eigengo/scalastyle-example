@@ -4,7 +4,7 @@ import akka.actor.Actor
 
 class CalculatorActor extends Actor {
 
-  def receive: Receive = {
+  def receive = {
     case i: Int => sender ! i * i
   }
 

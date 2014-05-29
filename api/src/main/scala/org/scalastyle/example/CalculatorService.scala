@@ -10,7 +10,7 @@ trait CalculatorService extends Directives with BasicToResponseMarshallers with 
   import akka.pattern.ask
 
   def calculatorRoute(calculator: ActorRef)
-                  (implicit ctx: ExecutionContext): Route =
+                  (implicit ctx: ExecutionContext) =
     path("square" / IntNumber) { i =>
       get {
         complete { (calculator ? i).map { case i: Int => <html>{i}</html>} }
